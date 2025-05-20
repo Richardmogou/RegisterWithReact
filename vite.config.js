@@ -7,6 +7,6 @@ export default defineConfig({
   base: "/RegisterWithReact/",
   server:{
     open:true,
-    port:3031,
+    port:3001,
   },
 });
