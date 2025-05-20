@@ -3,6 +3,8 @@ import '../styles/Lmain.css';
 import logo from '../assets/logo.png'
 import Rectangle from '../assets/Rectangle.png'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import ReactCountryFlag from 'react-country-flag';
+
 // import AiFillEye from '../assets/AiFillEye.png'
 // import AiFillEyeInvisible from '../assets/AiFillEyeInvisible.png'
 
@@ -10,7 +12,8 @@ function Lmain() {
   const [showPassword, setShowPassword] = React.useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
   const [agreedToTerms, setAgreedToTerms] = React.useState(false);
-
+  const [countryCode, setCountryCode] = React.useState('CM');
+  const [phoneNumber, setPhoneNumber] = React.useState('');
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -19,11 +22,28 @@ function Lmain() {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Gérer la soumission du formulaire ici
+  
+    const handlePhoneChange = (e) => {
+    setPhoneNumber(e.target.value);
   };
 
+  const handleCountryChange = (e) => {
+    setCountryCode(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log({
+      countryCode,
+      phoneNumber,
+    });
+  };
+  const formatPhoneNumber = () => {
+    if (!phoneNumber) return '';
+    
+    return phoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
+  };
   return (
     <div className="main-l">
       <div className="side-l">
@@ -63,15 +83,52 @@ function Lmain() {
                         <option value="+49" data-flag="🇩🇪">🇩🇪</option>
                         <option value="+81" data-flag="🇯🇵">🇯🇵</option>
                       </select> */}
+                      <div className="country-selector">
+                        <ReactCountryFlag 
+                          countryCode={countryCode} 
+                          svg
+                          style={{
+                            width: '1.5em',
+                            height: '1.5em',
+                            marginRight: '1px',
+                            
+                          }}
+                        />
+                      <select 
+                          id="countryCode" 
+                          name="countryCode"
+                          value={countryCode}
+                          onChange={handleCountryChange}
+                          className="country-select"
+                        >
+                          <option value="CM">+237</option>
+                          <option value="FR">+33</option>
+                          <option value="GB">+44</option>
+                          <option value="US">+1</option>
+                          <option value="DE">+49</option>
+                        </select>
+                      </div>
                     </div>
                     <hr />
-                    <div className="right">
+                    <div className="right" style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}>
+                      <div className="code">
+                          +237
+                      </div>
+                      <div>
                       <input 
                         type="tel" 
                         id="phone" 
-                        placeholder="+237 34 56 78 90" 
+                        value={formatPhoneNumber()}
+                        onChange={handlePhoneChange}
+                        placeholder="34 56 78 90" 
                         required 
                       />
+                      </div>
+                      
                     </div>
                   </div>
                 </div>

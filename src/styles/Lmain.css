@@ -5,6 +5,25 @@
     top:0;
     left: 0;
 }
+.country-selector {
+  display: flex;
+  align-items: center;
+ 
+}
+.code{
+  
+  width: 32px;
+  height: 20px;
+  font-family: 'inter';
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: #718096;
+}
+.country-select{
+ 
+  width: 20px;
+}
 *{
     margin: 0;
     padding: 0;
@@ -118,11 +137,11 @@ h1 {
 
   }
   .tout{
-    /* border: 1px solid; */
+     /* border: 1px solid;  */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 20px;
+    gap: 8px;
   }
 
   form .number {
@@ -147,10 +166,7 @@ h1 {
     height: 20px;
     
   }
-  form .number .right{
-    
-  
-  }
+ 
   
   form .number .num{
     
@@ -220,6 +236,11 @@ h1 {
     align-items: center;
     gap: 8px;
     font-size: 12px;
+    padding-top: 8px;
+    
+}
+select{
+  color: #718096;
 }
   
   .line-or hr{

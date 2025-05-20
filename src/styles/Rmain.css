@@ -80,6 +80,8 @@
     width: 525px;
     height: 618px;
     border-radius: 10px;
+    /* border: 1px solid red; */
+    position: fixed;
      
  }
  .context{
@@ -168,9 +170,10 @@
  .container .deux{
     width: 287px;
     height: 94px;
-    top: 430px;
-    left: 1432px;
-    position: fixed;
+  
+    top: 288px;
+    left: 214px;
+    position: absolute;
     border-width: 1.03px;
     border-radius: 10px;
      background: #F7FAFC;
@@ -269,5 +272,8 @@ border-width: 2px;
    justify-content: center;
    height: 400px;
    /* border: 1px solid; */
+}
+.container .un{
+   position: fixed;
 }
 
