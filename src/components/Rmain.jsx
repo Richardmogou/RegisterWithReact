@@ -14,7 +14,7 @@ function Rmain(){
     return(
         <div className='main-r'>
         <div className='rectangleu'>
-            <div className="rect back">
+                <div className="rect back">
                     <div className="elipse">
     
                     </div>

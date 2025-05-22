@@ -208,6 +208,9 @@ function Lmain() {
                     id="terms" 
                     checked={agreedToTerms}
                     onChange={() => setAgreedToTerms(!agreedToTerms)}
+                  style={{
+                    
+                  }}
                   />
                   <label htmlFor="terms">I agree with term and conditions</label>
                 </div>
