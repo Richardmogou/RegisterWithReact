@@ -350,7 +350,8 @@ select{
 }
   @media (max-width: 720px) {
    .logo{
-   
+   padding-left: 0px;
+   width: 100%;
    }
    h1{
     font-size: 2em;
@@ -359,17 +360,23 @@ select{
     
    }
    .main-l{
+
     padding:0
    }
    .side-l{
     
     justify-items: center;
     padding-left: 0;
-  
+    width: 100%;
+   }
+   .tout{
+    
+    width: 100%;
+    align-items: center;
    }
    .form{
     
-    width: 100%;
+    width: 80%;
 
    }
    .form label{
